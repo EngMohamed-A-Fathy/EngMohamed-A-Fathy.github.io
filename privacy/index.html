@@ -50,7 +50,7 @@
 <main>
   <div class="brand">Hatchbox Games</div>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective 22 October 2026. Applies to every Android game published by Hatchbox Games on Google Play ("we", "us").</p>
+  <p class="meta">Effective 21 November 2026 (online play added to section 4; first version 22 October 2026). Applies to every Android game published by Hatchbox Games on Google Play ("we", "us").</p>
 
   <ul class="apps" aria-label="Games covered by this policy">
     <li>Maze Raiders <code>com.hatchbox.mazeraiders</code></li>
@@ -78,7 +78,8 @@
     <h2>The short version</h2>
     <ul>
       <li>You never create an account. We do not ask for or collect your name, email, contacts, photos, files or precise location.</li>
-      <li>Your progress is saved on your phone, not on our servers. We do not run any servers that receive your data.</li>
+      <li>Your progress is saved on your phone, not on our servers.</li>
+      <li>Online play (Maze Raiders) runs on Photon's game servers. Our own small server keeps only the online leaderboard and match counts (your in-game name, an anonymous ID made by the game, and your online results). See section 4.</li>
       <li>The free games show ads through Google AdMob, which uses your device's advertising ID.</li>
       <li>Optional purchases are handled by Google Play. We never see your payment details.</li>
       <li>We do not sell your data and we use no analytics or tracking tools of our own.</li>
@@ -111,14 +112,17 @@
   </section>
 
   <section>
-    <h2>4. Leaderboards (Google Play Games, only if switched on)</h2>
-    <p>Online leaderboards are not switched on yet. If a future update adds them and you choose to use them, your Play Games profile name, avatar and scores will be shared with Google Play Games Services so other players can see them. Google's Privacy Policy covers that data, and you can manage your profile's visibility in the Play Games app.</p>
+    <h2>4. Online play and the online leaderboard (Maze Raiders)</h2>
+    <p><strong>Live matches (Photon Realtime).</strong> When you press PLAY ONLINE, the game connects to Photon Realtime, a multiplayer service run by Exit Games GmbH (Germany), on its European servers. To play a match, the game sends through Photon to the other player: your in-game name, country flag, trophy count, hero, skin and hero level, and during the match your controls and the game state (positions, cores, scores). Photon also receives your IP address and assigns a random, temporary player ID for the connection. We do not send Photon your advertising ID, email or any account. The connection is encrypted (secure WebSocket, TLS). The room and its data exist only while the match runs. Photon processes connection data under its own <a href="https://www.photonengine.com/terms/privacyandcookiepolicy" target="_blank" rel="noopener">privacy and cookie policy</a>.</p>
+    <p><strong>Online leaderboard and service statistics (our server).</strong> After a match against a real player, the game sends to our server at mb-brands.com (HTTPS): your in-game name, country flag, an anonymous random ID created by the game on your phone, your cores in that match, whether you won, and the match length. We use it to show the online top list. The game also sends anonymous counts (how many matches were played, and how many players were online when the service was full) so we know when to add capacity. Our server keeps a salted, one-way hash of your IP address for up to 48 hours only to limit abuse; it does not store the IP address itself. When no real player is free, you may be matched with a computer rival; those matches are only counted, never sent to the leaderboard.</p>
+    <p><strong>Friend Challenge.</strong> If you tap "Challenge a friend", the game builds a short code (arena, rival, difficulty, your score and in-game name) and opens your phone's share sheet. You choose the app and the person; we do not receive that message.</p>
+    <p>Google Play Games leaderboards are not switched on. If a future update adds them, we will update this page first.</p>
   </section>
 
   <section>
     <h2>5. Permissions the games use</h2>
     <ul>
-      <li><strong>Internet and network state</strong>: to load ads and talk to Google Play.</li>
+      <li><strong>Internet and network state</strong>: to load ads, talk to Google Play, and play online (Photon) and show the online leaderboard (our server).</li>
       <li><strong>Billing</strong>: to offer in-app purchases through Google Play.</li>
       <li><strong>Advertising ID and ad services</strong>: used by the Google Mobile Ads SDK as described in section 2.</li>
       <li><strong>Wake lock and foreground service</strong>: declared by Google libraries inside the ads SDK for short scheduled tasks. The games do not track you in the background.</li>
@@ -134,11 +138,13 @@
           <tr><td>Advertising ID, app set ID, IP address (approximate location), ad interactions, device info, ads SDK diagnostics</td><td>Google Mobile Ads SDK</td><td>Advertising, measurement, fraud prevention</td><td>Google</td></tr>
           <tr><td>Product ID, order ID, purchase token</td><td>Google Play Billing</td><td>Deliver and restore purchases</td><td>Processed by Google</td></tr>
           <tr><td>Game progress and settings</td><td>The game, on your phone</td><td>Save your game</td><td>No one (your own Google backup only, if on)</td></tr>
-          <tr><td>Play Games profile and scores (only if leaderboards are switched on later)</td><td>Google Play Games Services</td><td>Leaderboards</td><td>Google and other players</td></tr>
+          <tr><td>In-game name, flag, trophies, hero, match controls and game state, IP address, temporary player ID (only when you play online)</td><td>Photon Realtime (Exit Games GmbH)</td><td>Run the live match</td><td>The other player in your match (name, flag, trophies, hero, gameplay); Photon as service provider</td></tr>
+          <tr><td>In-game name, flag, anonymous game ID, online match results (only after an online match against a real player)</td><td>Hatchbox Games server (mb-brands.com)</td><td>Online leaderboard</td><td>Other players see your name, flag, wins and best score</td></tr>
+          <tr><td>Anonymous match counts and players-online counts; salted IP hash (48 hours)</td><td>Hatchbox Games server (mb-brands.com)</td><td>Capacity planning, abuse limits</td><td>No one</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="meta">Data sent over the network is encrypted in transit (HTTPS). We do not sell personal data.</p>
+    <p class="meta">Data sent over the network is encrypted in transit (HTTPS, and TLS for online matches). We do not sell personal data.</p>
   </section>
 
   <section>
@@ -148,7 +154,7 @@
 
   <section>
     <h2>8. Keeping and deleting data</h2>
-    <p>The save on your phone stays until you clear the app's data or uninstall the game. Data collected by Google is kept under Google's own retention policies. Because we hold no personal data on our own servers, there is nothing for us to delete on our side, but we will gladly help you with a request to Google.</p>
+    <p>The save on your phone stays until you clear the app's data or uninstall the game. Data collected by Google is kept under Google's own retention policies. Online match data on Photon is not kept by us after the match ends. Your online leaderboard entry (in-game name, flag, anonymous ID and results) stays until you ask us to delete it: write to the support email below with your in-game name and we will remove it. The salted IP hash used against abuse is deleted after 48 hours. We will also gladly help you with a request to Google.</p>
   </section>
 
   <section>
@@ -158,7 +164,7 @@
 
   <section>
     <h2>10. Changes to this policy</h2>
-    <p>If we add a feature that changes what data is processed (for example analytics or online leaderboards), we will update this page and the Google Play Data safety section before that version is released, and change the effective date above.</p>
+    <p>If we add a feature that changes what data is processed (for example analytics or new online features), we will update this page and the Google Play Data safety section before that version is released, and change the effective date above.</p>
   </section>
 
   <section>
